@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jasl's heaven</title>
+  <id>http://blog.jasl.me</id>
+  <link href="http://blog.jasl.me"/>
+  <link href="http://blog.jasl.me/feed.xml" rel="self"/>
+  <updated>2014-11-21T22:09:00+08:00</updated>
+  <author>
+    <name>jasl</name>
+  </author>
+  <entry>
+    <title>CSS 基础语法</title>
+    <link rel="alternate" href="http://blog.jasl.me/css_basics/"/>
+    <id>http://blog.jasl.me/css_basics/</id>
+    <published>2014-11-21T22:09:00+08:00</published>
+    <updated>2014-11-21T08:36:59+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;h3 id="css-"&gt;CSS 语法&lt;/h3&gt;
+
+&lt;p&gt;CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;selector {declaration1; declaration2; ... declarationN }
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;选择器通常是您需要改变样式的 HTML 元素。&lt;/p&gt;
+
+&lt;p&gt;每条声明由一个属性和一个值组成。&lt;/p&gt;
+
+&lt;p&gt;属性（property）是您希望设置的样式属性（style attribute）。每个属性有一个值。属性和值被冒号分开。&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;selector&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="py"&gt;property&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面这行代码的作用是将 h1 元素内的文字颜色定义为红色，同时将字体大小设置为 14 像素。&lt;/p&gt;
+
+&lt;p&gt;在这个例子中，h1 是选择器，color 和 font-size 是属性，red 和 14px 是值。&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;h1&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="no"&gt;red&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nl"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;14px&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面的示意图为您展示了上面这段代码的结构：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="CSS 语法" src="images/ct_css_selector-64e7b4e6.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;请使用花括号来包围声明。&lt;/p&gt;
+
+&lt;h3 id="section"&gt;值的不同写法和单位&lt;/h3&gt;
+
+&lt;p&gt;除了英文单词 red，我们还可以使用十六进制的颜色值 #ff0000：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#ff0000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;为了节约字节，我们可以使用 CSS 的缩写形式：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#f00&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们还可以通过两种方法使用 RGB 值：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;rgb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="err"&gt;%&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="err"&gt;%&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="err"&gt;%&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;请注意，当使用 RGB 百分比时，即使当值为 0 时也要写百分比符号。但是在其他的情况下就不需要这么做了。比如说，当尺寸为 0 像素时，0 之后不需要使用 px 单位，因为 0 就是 0，无论单位是什么。&lt;/p&gt;
+
+&lt;h3 id="section-1"&gt;记得写引号&lt;/h3&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;如果值为若干单词，则要给值加引号：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nl"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;"sans serif"&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="section-2"&gt;多重声明：&lt;/h3&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;如果要定义不止一个声明，则需要用分号将每个声明分开。下面的例子展示出如何定义一个红色文字的居中段落。最后一条规则是不需要加分号的，因为分号在英语中是一个分隔符号，不是结束符号。然而，大多数有经验的设计师会在每条声明的末尾都加上分号，这么做的好处是，当你从现有的规则中增减声明时，会尽可能地减少出错的可能性。就像这样：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nl"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="no"&gt;red&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;你应该在每行只描述一个属性，这样可以增强样式定义的可读性，就像这样：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;black&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;arial&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="section-3"&gt;空格和大小写&lt;/h3&gt;
+
+&lt;p&gt;大多数样式表包含不止一条规则，而大多数规则包含不止一个声明。多重声明和空格的使用使得样式表更容易被编辑：&lt;/p&gt;
+
+&lt;div class="highlight css"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#fff&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Georgia&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Palatino&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;是否包含空格不会影响 CSS 在浏览器的工作效果，同样，与 XHTML 不同，CSS 对大小写不敏感。不过存在一个例外：如果涉及到与 HTML 文档一起工作的话，class 和 id 名称对大小写是敏感的。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>CSS 简介</title>
+    <link rel="alternate" href="http://blog.jasl.me/css_intro/"/>
+    <id>http://blog.jasl.me/css_intro/</id>
+    <published>2014-11-21T22:03:00+08:00</published>
+    <updated>2014-11-21T08:08:32+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;h3 id="section"&gt;需要具备的基础知识&lt;/h3&gt;
+
+&lt;p&gt;在继续学习之前，你需要对下面的知识有基本的了解：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;XHTML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="css-"&gt;CSS 概述&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSS 指层叠样式表 (_C_ascading _S_tyle _S_heets)&lt;/li&gt;
+  &lt;li&gt;样式定义_如何显示_ HTML 元素&lt;/li&gt;
+  &lt;li&gt;样式通常存储在_样式表_中&lt;/li&gt;
+  &lt;li&gt;把样式添加到 HTML 4.0 中，是为了_解决内容与表现分离的问题_&lt;/li&gt;
+  &lt;li&gt;_外部样式表_可以极大提高工作效率&lt;/li&gt;
+  &lt;li&gt;外部样式表通常存储在 _CSS 文件_中&lt;/li&gt;
+  &lt;li&gt;多个样式定义可_层叠_为一&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="section-1"&gt;样式解决了一个普遍的问题&lt;/h3&gt;
+
+&lt;p&gt;HTML 标签原本被设计为用于定义文档内容。通过使用 &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; 这样的标签，HTML 的初衷是表达“这是标题”、“这是段落”、“这是表格”之类的信息。同时文档布局由浏览器来完成，而不使用任何的格式化标签。&lt;/p&gt;
+
+&lt;p&gt;由于两种主要的浏览器（Netscape 和 Internet Explorer）不断地将新的 HTML 标签和属性（比如字体标签和颜色属性）添加到 HTML 规范中，创建文档内容清晰地独立于文档表现层的站点变得越来越困难。&lt;/p&gt;
+
+&lt;p&gt;为了解决这个问题，万维网联盟（W3C），这个非营利的标准化联盟，肩负起了 HTML 标准化的使命，并在 HTML 4.0 之外创造出样式（Style）。&lt;/p&gt;
+
+&lt;p&gt;所有的主流浏览器均支持层叠样式表。&lt;/p&gt;
+
+&lt;h3 id="section-2"&gt;样式表极大地提高了工作效率&lt;/h3&gt;
+
+&lt;p&gt;样式表定义如何显示 HTML 元素，就像 HTML 3.2 的字体标签和颜色属性所起的作用那样。样式通常保存在外部的 .css 文件中。通过仅仅编辑一个简单的 CSS 文档，外部样式表使你有能力同时改变站点中所有页面的布局和外观。&lt;/p&gt;
+
+&lt;p&gt;由于允许同时控制多重页面的样式和布局，CSS 可以称得上 WEB 设计领域的一个突破。作为网站开发者，你能够为每个 HTML 元素定义样式，并将之应用于你希望的任意多的页面中。如需进行全局的更新，只需简单地改变样式，然后网站中的所有元素均会自动地更新。&lt;/p&gt;
+
+&lt;h3 id="section-3"&gt;多重样式将层叠为一个&lt;/h3&gt;
+
+&lt;p&gt;样式表允许以多种方式规定样式信息。样式可以规定在单个的 HTML 元素中，在 HTML 页的头元素中，或在一个外部的 CSS 文件中。甚至可以在同一个 HTML 文档内部引用多个外部样式表。&lt;/p&gt;
+
+&lt;h4 id="section-4"&gt;层叠次序&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;当同一个 HTML 元素被不止一个样式定义时，会使用哪个样式呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;一般而言，所有的样式会根据下面的规则层叠于一个新的虚拟样式表中，其中数字 4 拥有最高的优先权。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;浏览器缺省设置&lt;/li&gt;
+  &lt;li&gt;外部样式表&lt;/li&gt;
+  &lt;li&gt;内部样式表（位于 &amp;lt;head&amp;gt; 标签内部）&lt;/li&gt;
+  &lt;li&gt;内联样式（在 HTML 元素内部）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HTML 标题</title>
+    <link rel="alternate" href="http://blog.jasl.me/html_title/"/>
+    <id>http://blog.jasl.me/html_title/</id>
+    <published>2014-11-21T21:19:00+08:00</published>
+    <updated>2014-11-21T07:27:13+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;在 HTML 文档中，标题很重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="html-"&gt;HTML 标题&lt;/h3&gt;
+
+&lt;p&gt;标题（Heading）是通过 &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; - &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 等标签进行定义的。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; 定义最大的标题。&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 定义最小的标题。&lt;/p&gt;
+
+&lt;h3 id="section"&gt;实例&lt;/h3&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;浏览器会自动地在标题的前后添加空行。&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。&lt;/p&gt;
+
+&lt;h3 id="section-1"&gt;标题很重要&lt;/h3&gt;
+
+&lt;p&gt;请确保将 HTML heading 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。&lt;/p&gt;
+
+&lt;p&gt;搜索引擎使用标题为您的网页的结构和内容编制索引。&lt;/p&gt;
+
+&lt;p&gt;因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。&lt;/p&gt;
+
+&lt;p&gt;应该将 h1 用作主标题（最重要的），其后是 h2（次重要的），再其次是 h3，以此类推。&lt;/p&gt;
+
+&lt;h3 id="html--1"&gt;HTML 水平线&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt; 标签在 HTML 页面中创建水平线。&lt;/p&gt;
+
+&lt;p&gt;hr 元素可用于分隔内容。&lt;/p&gt;
+
+&lt;h4 id="section-2"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;hr&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;hr&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;使用水平线 (&lt;code&gt;&amp;lt;hr&amp;gt;&lt;/code&gt; 标签) 来分隔文章中的小节是一个办法（但并不是唯一的办法）。&lt;/p&gt;
+
+&lt;h3 id="html--2"&gt;HTML 注释&lt;/h3&gt;
+
+&lt;p&gt;可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们。&lt;/p&gt;
+
+&lt;p&gt;注释是这样写的：&lt;/p&gt;
+
+&lt;h4 id="section-3"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;&amp;lt;!-- This is a comment --&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;开始括号之后（左边的括号）需要紧跟一个叹号，结束括号之前（右边的括号）不需要。&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;合理地使用注释可以对未来的代码编辑工作产生帮助。&lt;/p&gt;
+
+&lt;h3 id="html----"&gt;HTML 提示 - 如何查看源代码&lt;/h3&gt;
+
+&lt;p&gt;您一定曾经在看到某个网页时惊叹道 “WOW! 这是如何实现的？”&lt;/p&gt;
+
+&lt;p&gt;如果您想找到其中的奥秘，只需要单击右键，然后选择“查看源文件”（IE）或“查看页面源代码”（Firefox），其他浏览器的做法也是类似的。这么做会打开一个包含页面 HTML 代码的窗口。&lt;/p&gt;
+
+&lt;h3 id="html--3"&gt;HTML 标签参考手册&lt;/h3&gt;
+
+&lt;p&gt;W3School 的标签参考手册提供了有关这些标题及其属性的更多信息。&lt;/p&gt;
+
+&lt;p&gt;您将在本教程下面的章节中学到更多有关 HTML 标签和属性的知识。&lt;/p&gt;
+
+&lt;table class="table table-bordered table-striped"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;标签&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="http://www.w3school.com.cn/tags/tag_html.asp"&gt;&amp;lt;html&amp;gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;定义 HTML 文档。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="http://www.w3school.com.cn/tags/tag_body.asp"&gt;&amp;lt;body&amp;gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;定义文档的主体。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="http://www.w3school.com.cn/tags/tag_hn.asp"&gt;&amp;lt;h1&amp;gt; to &amp;lt;h6&amp;gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;定义 HTML 标题&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="http://www.w3school.com.cn/tags/tag_hr.asp"&gt;&amp;lt;hr&amp;gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;定义水平线。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="http://www.w3school.com.cn/tags/tag_comment.asp"&gt;&amp;lt;!–&amp;gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;定义注释。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HTML 元素</title>
+    <link rel="alternate" href="http://blog.jasl.me/html_elements/"/>
+    <id>http://blog.jasl.me/html_elements/</id>
+    <published>2014-11-21T20:13:00+08:00</published>
+    <updated>2014-11-21T07:08:23+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;HTML 文档是由 HTML 元素定义的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="html-"&gt;HTML 元素&lt;/h3&gt;
+
+&lt;p&gt;HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。&lt;/p&gt;
+
+&lt;table class="table table-bordered table-striped"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;开始标签&lt;/th&gt;
+      &lt;th&gt;元素内容&lt;/th&gt;
+      &lt;th&gt;结束标签&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;lt;p&amp;gt;&lt;/td&gt;
+      &lt;td&gt;This is a paragraph&lt;/td&gt;
+      &lt;td&gt;&amp;lt;/p&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;lt;a href="default.htm" &amp;gt;&lt;/td&gt;
+      &lt;td&gt;This is a link&lt;/td&gt;
+      &lt;td&gt;&amp;lt;/a&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;lt;br /&amp;gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;开始标签常被称为开放标签（opening tag），结束标签常称为闭合标签（closing tag）。&lt;/p&gt;
+
+&lt;h3 id="html--1"&gt;HTML 元素语法&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML 元素以_开始标签_起始&lt;/li&gt;
+  &lt;li&gt;HTML 元素以_结束标签_终止&lt;/li&gt;
+  &lt;li&gt;_元素的内容_是开始标签与结束标签之间的内容&lt;/li&gt;
+  &lt;li&gt;某些 HTML 元素具有_空内容（empty content）_&lt;/li&gt;
+  &lt;li&gt;空元素_在开始标签中进行关闭_（以开始标签的结束而结束）&lt;/li&gt;
+  &lt;li&gt;大多数 HTML 元素可拥有_属性_&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;您将在本教程的下一章中学习更多有关属性的内容。&lt;/p&gt;
+
+&lt;h3 id="html--2"&gt;嵌套的 HTML 元素&lt;/h3&gt;
+
+&lt;p&gt;大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。&lt;/p&gt;
+
+&lt;p&gt;HTML 文档由嵌套的 HTML 元素构成。&lt;/p&gt;
+
+&lt;h4 id="html--3"&gt;HTML 文档实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is my first paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的例子包含三个 HTML 元素。&lt;/p&gt;
+
+&lt;h3 id="html--4"&gt;HTML 实例解释&lt;/h3&gt;
+
+&lt;h4 id="p-"&gt;&amp;lt;p&amp;gt; 元素：&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is my first paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 元素定义了 HTML 文档中的一个段落。&lt;/p&gt;
+
+&lt;p&gt;这个元素拥有一个开始标签 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;，以及一个结束标签 &lt;code&gt;&amp;lt;/p&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;元素内容是：This is my first paragraph。&lt;/p&gt;
+
+&lt;h4 id="body-"&gt;&amp;lt;body&amp;gt; 元素：&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is my first paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 元素定义了 HTML 文档的主体。&lt;/p&gt;
+
+&lt;p&gt;这个元素拥有一个开始标签 &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;，以及一个结束标签 &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;元素内容是另一个 HTML 元素（p 元素）。&lt;/p&gt;
+
+&lt;h4 id="html--5"&gt;&amp;lt;html&amp;gt; 元素：&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is my first paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; 元素定义了整个 HTML 文档。&lt;/p&gt;
+
+&lt;p&gt;这个元素拥有一个开始标签 &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;，以及一个结束标签 &lt;code&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;元素内容是另一个 HTML 元素（body 元素）。&lt;/p&gt;
+
+&lt;h3 id="section"&gt;不要忘记结束标签&lt;/h3&gt;
+
+&lt;p&gt;即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph
+&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的例子在大多数浏览器中都没问题，但不要依赖这种做法。忘记使用结束标签会产生不可预料的结果或错误。&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;未来的 HTML 版本不允许省略结束标签。&lt;/p&gt;
+
+&lt;h3 id="html--6"&gt;空的 HTML 元素&lt;/h3&gt;
+
+&lt;p&gt;没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 就是没有关闭标签的空元素（&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 标签定义换行）。&lt;/p&gt;
+
+&lt;p&gt;在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。&lt;/p&gt;
+
+&lt;p&gt;在开始标签中添加斜杠，比如 &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。&lt;/p&gt;
+
+&lt;p&gt;即使 &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 在所有浏览器中都是有效的，但使用 &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; 其实是更长远的保障。&lt;/p&gt;
+
+&lt;h3 id="html--7"&gt;HTML 提示：使用小写标签&lt;/h3&gt;
+
+&lt;p&gt;HTML 标签对大小写不敏感：&lt;code&gt;&amp;lt;P&amp;gt;&lt;/code&gt; 等同于 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;。许多网站都使用大写的 HTML 标签。&lt;/p&gt;
+
+&lt;p&gt;W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中_推荐_使用小写，而在未来 (X)HTML 版本中_强制_使用小写。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HTML 属性</title>
+    <link rel="alternate" href="http://blog.jasl.me/html_attributes/"/>
+    <id>http://blog.jasl.me/html_attributes/</id>
+    <published>2014-11-21T20:13:00+08:00</published>
+    <updated>2014-11-21T07:15:31+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;属性为 HTML 元素提供附加信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="html-"&gt;HTML 属性&lt;/h3&gt;
+
+&lt;p&gt;HTML 标签可以拥有_属性&lt;em&gt;。属性提供了有关 HTML 元素的_更多的信息&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;属性总是以名称/值对的形式出现，比如：&lt;em&gt;name="value"&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;属性总是在 HTML 元素的_开始标签_中规定。&lt;/p&gt;
+
+&lt;h3 id="section"&gt;属性实例&lt;/h3&gt;
+
+&lt;p&gt;HTML 链接由 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 标签定义。链接的地址在 href 属性中指定：&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;"http://www.w3school.com.cn"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;This is a link&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="html--1"&gt;更多 HTML 属性实例&lt;/h3&gt;
+
+&lt;h4 id="section-1"&gt;属性例子 1:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; 定义标题的开始。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1 align="center"&amp;gt;&lt;/code&gt; 拥有关于对齐方式的附加信息。&lt;/p&gt;
+
+&lt;h4 id="section-2"&gt;属性例子 2:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 定义 HTML 文档的主体。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;body bgcolor="yellow"&amp;gt;&lt;/code&gt; 拥有关于背景颜色的附加信息。&lt;/p&gt;
+
+&lt;h4 id="section-3"&gt;属性例子 3:&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; 定义 HTML 表格。（您将在稍后的章节学习到更多有关 HTML 表格的内容）&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;table border="1"&amp;gt;&lt;/code&gt; 拥有关于表格边框的附加信息。&lt;/p&gt;
+
+&lt;h3 id="html--2"&gt;HTML 提示：使用小写属性&lt;/h3&gt;
+
+&lt;p&gt;属性和属性值对大小写_不敏感_。&lt;/p&gt;
+
+&lt;p&gt;不过，万维网联盟在其 HTML 4 推荐标准中推荐小写的属性/属性值。&lt;/p&gt;
+
+&lt;p&gt;而新版本的 (X)HTML 要求使用小写属性。&lt;/p&gt;
+
+&lt;h3 id="section-4"&gt;始终为属性值加引号&lt;/h3&gt;
+
+&lt;p&gt;属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题。&lt;/p&gt;
+
+&lt;p&gt;在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;pre&amp;gt;&lt;/span&gt;name='Bill "HelloWorld" Gates'&lt;span class="nt"&gt;&amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="html--3"&gt;HTML 属性参考手册&lt;/h3&gt;
+
+&lt;p&gt;我们的完整的 HTML 参考手册提供了每个 HTML 元素可使用的合法属性的完整列表：&lt;/p&gt;
+
+&lt;p&gt;&lt;a title="HTML 4.01 / XHTML 1.0 参考手册" href="http://www.w3school.com.cn/tags/index.asp"&gt;完整的 HTML 参考手册&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下面列出了适用于大多数 HTML 元素的属性：&lt;/p&gt;
+
+&lt;table class="table table-bordered table-striped"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;属性&lt;/th&gt;
+      &lt;th&gt;值&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;class&lt;/td&gt;
+      &lt;td&gt;classname&lt;/td&gt;
+      &lt;td&gt;规定元素的类名（classname）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;id&lt;/td&gt;
+      &lt;td&gt;id&lt;/td&gt;
+      &lt;td&gt;规定元素的唯一 id&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;style&lt;/td&gt;
+      &lt;td&gt;style_definition&lt;/td&gt;
+      &lt;td&gt;规定元素的行内样式（inline style）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;title&lt;/td&gt;
+      &lt;td&gt;text&lt;/td&gt;
+      &lt;td&gt;规定元素的额外信息（可在工具提示中显示）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;如需更多关于标准属性的信息，请访问：&lt;/p&gt;
+
+&lt;p&gt;&lt;a title="HTML 标准属性" href="http://www.w3school.com.cn/tags/html_ref_standardattributes.asp"&gt;HTML 标准属性参考手册&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>基本的 HTML 标签</title>
+    <link rel="alternate" href="http://blog.jasl.me/html_basics/"/>
+    <id>http://blog.jasl.me/html_basics/</id>
+    <published>2014-11-21T20:01:00+08:00</published>
+    <updated>2014-11-21T06:08:08+08:00</updated>
+    <author>
+      <name>jasl</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;strong&gt;本章通过实例向您演示最常用的 HTML 标签。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;提示：&lt;/span&gt;不要担心本章中您还没有学过的例子，您将在下面的章节中学到它们。&lt;/p&gt;
+
+&lt;h3 id="html-"&gt;HTML 标题&lt;/h3&gt;
+
+&lt;p&gt;HTML 标题（Heading）是通过 &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; - &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; 等标签进行定义的。&lt;/p&gt;
+
+&lt;h4 id="section"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;This is a heading&lt;span class="nt"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="html--1"&gt;HTML 段落&lt;/h3&gt;
+
+&lt;p&gt;HTML 段落是通过 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 标签进行定义的。&lt;/p&gt;
+
+&lt;h4 id="section-1"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is another paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id="html--2"&gt;HTML 链接&lt;/h3&gt;
+
+&lt;p&gt;HTML 链接是通过 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 标签进行定义的。&lt;/p&gt;
+
+&lt;h4 id="section-2"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;"http://www.w3school.com.cn"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;This is a link&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;在 href 属性中指定链接的地址。&lt;/p&gt;
+
+&lt;p&gt;（您将在本教程稍后的章节中学习更多有关属性的知识）。&lt;/p&gt;
+
+&lt;h3 id="html--3"&gt;HTML 图像&lt;/h3&gt;
+
+&lt;p&gt;HTML 图像是通过 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签进行定义的。&lt;/p&gt;
+
+&lt;h4 id="section-3"&gt;实例&lt;/h4&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"w3school.jpg"&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"104"&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"142"&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;注释：&lt;/span&gt;图像的名称和尺寸是以属性的形式提供的。&lt;/p&gt;
+</content>
+  </entry>
+</feed>

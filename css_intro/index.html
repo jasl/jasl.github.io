@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="jasl">
+  <meta name="description" content="Jasl's heaven">
+  <link rel="alternate" href="feed.xml" title="Jasl's heaven" type="application/atom+xml">
+  <title>CSS 简介 - Jasl's heaven</title>
+  <link href="../images/favicon.png" rel="icon" type="image/png" />
+  <link href="../stylesheets/application-7f179c25.css" rel="stylesheet" type="text/css" media="all" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Jasl's heaven</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+<a target="_blank" title="Twitter" href="http://twitter.com/jasl9187">            <i class="fa fa-twitter"></i>
+            <span class="third_party_name">Twitter</span>
+</a>        </li>
+        <li>
+<a target="_blank" title="GitHub" href="https://github.com/jasl">            <i class="fa fa-github"></i>
+            <span class="third_party_name">GitHub</span>
+</a>        </li>
+      <li>
+<a target="_blank" title="RSS" href="../feed.xml">          <i class="fa fa-rss"></i>
+          <span class="third_party_name">RSS</span>
+</a>      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="row">
+    <div class="col-md-9 main">
+        <article class="article-entry" role="article">
+    <header class="page-header">
+      <p class="meta text-muted text-uppercase">
+        <span class="glyphicon glyphicon-calendar"></span>
+<time date_time="2014-11-21 22:03:00 +0800">          Nov 21, 2014
+</time>          |
+          <span class="glyphicon glyphicon-tags"></span>
+          <a class="tag" href="/tags/css/">CSS</a>
+      </p>
+      <h1 class="entry-title">
+        CSS 简介
+      </h1>
+    </header>
+    <div class="entry-content clearfix">
+      <h3 id="section">需要具备的基础知识</h3>
+
+<p>在继续学习之前，你需要对下面的知识有基本的了解：</p>
+
+<ul>
+  <li>HTML</li>
+  <li>XHTML</li>
+</ul>
+
+<h3 id="css-">CSS 概述</h3>
+
+<ul>
+  <li>CSS 指层叠样式表 (_C_ascading _S_tyle _S_heets)</li>
+  <li>样式定义_如何显示_ HTML 元素</li>
+  <li>样式通常存储在_样式表_中</li>
+  <li>把样式添加到 HTML 4.0 中，是为了_解决内容与表现分离的问题_</li>
+  <li>_外部样式表_可以极大提高工作效率</li>
+  <li>外部样式表通常存储在 _CSS 文件_中</li>
+  <li>多个样式定义可_层叠_为一</li>
+</ul>
+
+<h3 id="section-1">样式解决了一个普遍的问题</h3>
+
+<p>HTML 标签原本被设计为用于定义文档内容。通过使用 <code>&lt;h1&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;table&gt;</code> 这样的标签，HTML 的初衷是表达“这是标题”、“这是段落”、“这是表格”之类的信息。同时文档布局由浏览器来完成，而不使用任何的格式化标签。</p>
+
+<p>由于两种主要的浏览器（Netscape 和 Internet Explorer）不断地将新的 HTML 标签和属性（比如字体标签和颜色属性）添加到 HTML 规范中，创建文档内容清晰地独立于文档表现层的站点变得越来越困难。</p>
+
+<p>为了解决这个问题，万维网联盟（W3C），这个非营利的标准化联盟，肩负起了 HTML 标准化的使命，并在 HTML 4.0 之外创造出样式（Style）。</p>
+
+<p>所有的主流浏览器均支持层叠样式表。</p>
+
+<h3 id="section-2">样式表极大地提高了工作效率</h3>
+
+<p>样式表定义如何显示 HTML 元素，就像 HTML 3.2 的字体标签和颜色属性所起的作用那样。样式通常保存在外部的 .css 文件中。通过仅仅编辑一个简单的 CSS 文档，外部样式表使你有能力同时改变站点中所有页面的布局和外观。</p>
+
+<p>由于允许同时控制多重页面的样式和布局，CSS 可以称得上 WEB 设计领域的一个突破。作为网站开发者，你能够为每个 HTML 元素定义样式，并将之应用于你希望的任意多的页面中。如需进行全局的更新，只需简单地改变样式，然后网站中的所有元素均会自动地更新。</p>
+
+<h3 id="section-3">多重样式将层叠为一个</h3>
+
+<p>样式表允许以多种方式规定样式信息。样式可以规定在单个的 HTML 元素中，在 HTML 页的头元素中，或在一个外部的 CSS 文件中。甚至可以在同一个 HTML 文档内部引用多个外部样式表。</p>
+
+<h4 id="section-4">层叠次序</h4>
+
+<p><strong>当同一个 HTML 元素被不止一个样式定义时，会使用哪个样式呢？</strong></p>
+
+<p>一般而言，所有的样式会根据下面的规则层叠于一个新的虚拟样式表中，其中数字 4 拥有最高的优先权。</p>
+
+<ol>
+  <li>浏览器缺省设置</li>
+  <li>外部样式表</li>
+  <li>内部样式表（位于 &lt;head&gt; 标签内部）</li>
+  <li>内联样式（在 HTML 元素内部）</li>
+</ol>
+
+<p>因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：<code>&lt;head&gt;</code> 标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。</p>
+
+    </div>
+    <footer class="clearfix">
+      <div class="sharing pull-right">
+        <div class="jiathis_style_24x24">
+          <a class="jiathis_button_tsina"></a>
+          <a class="jiathis_button_weixin"></a>
+          <a class="jiathis_button_renren"></a>
+          <a class="jiathis_button_twitter"></a>
+          <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+        </div>
+      </div>
+    </footer>
+  </article>
+
+  <ul class="pager">
+      <li class="previous">
+        <a href="../html_title/">&larr; HTML 标题</a>
+      </li>
+      <li class="next">
+        <a href="../css_basics/">CSS 基础语法 &rarr;</a>
+      </li>
+  </ul>
+
+  <section class="comment">
+    <div id="disqus_thread" aria-live="polite">
+      <noscript>Please enable JavaScript to view the
+        <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+
+    </div>
+
+    <div class="col-md-3 sidebar hidden-xs hidden-sm">
+      <aside class="panel">
+  <header class="panel-heading">Recent Articles</header>
+  <div class="list-group">
+      <a class="list-group-item" href="../css_basics/">CSS 基础语法</a>
+      <a class="list-group-item" href="./">CSS 简介</a>
+      <a class="list-group-item" href="../html_title/">HTML 标题</a>
+      <a class="list-group-item" href="../html_elements/">HTML 元素</a>
+      <a class="list-group-item" href="../html_attributes/">HTML 属性</a>
+      <a class="list-group-item" href="../html_basics/">基本的 HTML 标签</a>
+      <a class="list-group-item" href="../html_intro/">HTML 简介</a>
+  </div>
+</aside>
+
+<aside class="panel">
+  <header class="panel-heading">Tags</header>
+  <div class="list-group">
+      <a class="list-group-item" href="/tags/css/">CSS (2)</a>
+      <a class="list-group-item" href="/tags/html/">HTML (5)</a>
+  </div>
+</aside>
+
+<aside class="panel">
+  <header class="panel-heading">By Year</header>
+  <div class="list-group">
+      <a class="list-group-item" href="/archives/2014/">2014 (7)</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>
+  &copy; jasl<br>
+  Powered by <a href="https://github.com/jasl/haven">haven</a>, themed with illusion.
+</p>
+
+  </footer>
+</div>
+
+<script src="../javascripts/application-91ff1296.js" type="text/javascript"></script>
+    <script>
+      var disqus_shortname = 'jasl';
+      (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+
+      var jiathis_config={
+        summary:"",
+        shortUrl:false,
+        hideMore:false
+      };
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+
+</body>
+</html>
